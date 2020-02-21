@@ -21,6 +21,7 @@ It uses the Qualcomm Diag protocol, also called QCDM or DM (Diagnostic Monitor) 
 * **[Installation](#installation)**
   * [Ubuntu and Debian installation](#ubuntu-and-debian-installation)
   * [Windows installation](#ubuntu-and-debian-installation)
+  * [QualcomDiagnostics Mode Shortcut](#QualcomDiagnostics-Shortcut)
 * [Supported protocols](#supported-protocols)
 * **[Usage notice](#usage-notice)**
 
@@ -78,6 +79,23 @@ pip3 install --upgrade pyserial crcmod https://github.com/P1sec/pycrate/archive/
 ```
 
 Still in your command prompt, move to the directory containing QCSuper using the `cd` command. You can then execute commands (which should start with `qcsuper.py` instead of `./qcsuper.py`).
+
+### QualcomDiagnostics Shortcut
+
+To use the app with adb support usually require adb. But there's a workaround method to enable QualcomDiagnostics mode
+for some devices. It is different in each device and the menu activity is hidden in testing-mode applications.
+
+To enable Qualcom Diagnostics mode:
+ * Download Shortcut Master App [Google Play](https://play.google.com/store/apps/details?id=org.vndnguyen.shortcutmaster.lite) or [ApkPure](https://apkpure.com/shortcut-master-lite/org.vndnguyen.shortcutmaster.lite)
+ * Install the App and Launch it. (wait for it to scan all apps).
+ * First and Foremost: BE CAREFULL WHILE LOOKING THROUGH HIDDEN MENUS, DONT CHANGE SETTINGS IF YOU DONT KNOW WHAT IT DOES.
+ * Search for "diag"
+ * Usually the results would contain "Testing Mode", "Factory Test" etc.
+ * Try exploring the Activities to find a Switch that says "Diag".
+ * Connect the device to PC.
+ * Open Device Manager (windows) / lsusb (linux).
+ * Enable the switch toggle in the activity and watch the device manager for new com port.
+ * Use the COM Port as a Modem interface.
 
 ## Supported protocols
 
